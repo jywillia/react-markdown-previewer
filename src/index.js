@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import mdpReducer from './redux/reducers/mdpReducer.js';
 import './index.css';
-import MDPApp from './MDPApp';
 
 // create store to hold app's state
 const store = createStore( mdpReducer );

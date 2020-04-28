@@ -9,7 +9,7 @@ import './App.css';
 export default function MDPApp() {
   return (
     <div className="MDPApp">
-      <h1>A Simple React Markdown Previewer</h1>
+      <h1 id="appTitle">A Simple React Markdown Previewer</h1>
       <MarkdownPreviewer />
     </div>
   );

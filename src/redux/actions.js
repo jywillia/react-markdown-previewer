@@ -1,8 +1,8 @@
 // import action type constants
-import { UPDATE_INPUT } from "../actionTypes";
+import { UPDATE_INPUT } from "./actionTypes.js";
 
-// set new input state and update preview
-export const updateInput = (e) => ({
+// set new input state
+export const updateInput = ( event ) => ({
     type: UPDATE_INPUT,
-    input: e.target.value
+    input: event.target.value    
 })

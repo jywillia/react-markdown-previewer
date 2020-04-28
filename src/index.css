@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#appTitle {
+  text-align: center;
+}
+
+#left-col {
+  border: 5px solid black;
+  height: 100%;
+}
+
+#right-col {
+  border: 5px solid black;
+}
+
+textarea {    
+  min-height: 90vh;
+  width: 100%;
+}

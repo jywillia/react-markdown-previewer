@@ -8,23 +8,26 @@ import { updateInput } from '../redux/actions';
 // import marked library api
 import marked from 'marked';
 
+// import dom purify library to sanitize converted html
+import DOMPurify from 'dompurify';
+
 // app's presentational component
 class MarkdownPreviewer extends React.Component {
     constructor( props ) {
         super( props );        
 
-        this.onChange = this.onChange.bind( this );
+        this.handleChange = this.handleChange.bind( this );
         this.convert = this.convert.bind( this );
     }
 
-    // onChange listener handles user input in textarea then updates preview
-    onChange() {                
-        this.props.updateInput();        
+    // stateless function to convert input to html
+    convert( value ) {
+        return { __html:DOMPurify.sanitize( marked( value, { gfm: true, breaks: true } ) ) };
     }
 
-    // stateless function to convert input to html
-    convert() {
-        return {__html:marked(this.props.input)};
+    // onChange listener handles user input in textarea then updates preview
+    handleChange( event ) {                
+        this.props.updateInput( event );        
     }
 
     render() {
@@ -33,11 +36,17 @@ class MarkdownPreviewer extends React.Component {
                 {/* textarea element for user input */}
                 <div className="row">
                     {/* textarea element with label for user input */}
-                    <label for="editor">Markdown editor: enter your markdown here.</label>
-                    <textarea id="editor" className="col-6" onChange={this.updateInput}>{this.props.input}</textarea>
+                    <div className="col-6 container" id="left-col">
+                      {/*<label htmlFor="editor">Markdown editor: enter your markdown here.</label>*/}
+                      <textarea id="editor" type="text" className="form-control" onChange={this.handleChange} defaultValue={this.props.input}></textarea>
+                    </div>
+                                        
                     {/* output element with label for converted user input */}
-                    <label for="preview">Preview of Markdown:</label>
-                    <div id="preview" className="col-6" dangerouslySetInnerHTML={this.convert()}></div>
+                    <div className="col-6 container-fluid" id="right-col">
+                      {/*<label htmlFor="preview">Preview of Markdown:</label>*/}
+                      <div id="preview" dangerouslySetInnerHTML={this.convert( this.props.input )}></div>
+                      {/*<div id="inputPreview">{this.convert( this.props.input )}</div>*/}        
+                    </div>                    
                 </div>                
             </div>
         );
@@ -53,7 +62,7 @@ const mapStateToProps = state => {
 // connect dispatch to appropriate listener
 const mapDispatchToProps = dispatch => {
     return {
-        updateInput: () => dispatch( updateInput() )        
+        updateInput: event => dispatch( updateInput( event ) )
     }
 }
 
