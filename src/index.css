@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
 }
 
 code {
@@ -28,4 +29,46 @@ code {
 textarea {    
   min-height: 90vh;
   width: 100%;
+}
+
+pre {
+  box-sizing: border-box;  
+  font-family: monospace;
+  background-color: white;
+}
+
+code {
+  color: black;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+blockquote {
+  color: blue;
+  border-left: 3px solid magenta;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+
+table {
+  table-layout: fixed;
+  box-sizing: border-box;
+  border-spacing: 2px;
+  border: 3px solid darkblue;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+
+th {
+  font-weight: bold;
+  border: 3px solid darkblue; 
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+td {
+  border: 3px solid darkblue;
+  letter-spacing: 1px;
+  padding: 10px;
 }
