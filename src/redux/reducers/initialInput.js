@@ -1,46 +1,70 @@
 // export initial state const for first load
 export const initialInput = 
-`# Welcome to my React Markdown Previewer!
+`# This creates h1 style headers, don't forget the space!
 
-## This is a sub-heading...
+## This creates h2 style sub-headers, I'm a bit smaller.
 
-### And here's some other cool stuff:  
+### Sub-headers get smaller, but I'm not the smallest.
 
-Heres some code, \`<div></div>\`, between 2 backticks.
+Display some code inline with back ticks like this \`<ComponentName />\` to illustrate code or command line input.
 
+Display larger blocks of code with triple back ticks, don't use single quotes
 \`\`\`
-// this is multi-line code:
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
+// This looks like code to me
+class MyComponent extends React.Component {
+    constructor( props ) {
+        super( props );
+
+        // bind this to my handler function
+        this.onClick = this.onClick.bind( this );
+    }
+
+    // on click handler
+    handleClick() {
+        this.props.actionDispatcher();
+    }
+
+    // render component
+    render() {
+        return(
+            <div><button onClick={this.handleClick}></div>
+        );
+    }
 }
-\`\`\`  
+\`\`\`
 
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
-There's also [links](https://www.freecodecamp.com), and
+This is a table header | Another header | Yet another header followed by a divider segment
+--- | ----- | ------
+number of dashes over 3 don't matter | this is the table content btw | here is some more content for you
+we can add some more here | and here to | BUT NOT HERE, NOT EVER...JK :) even here
 
-> Block Quotes!
+#### Do you like lists, well this is how to make them with markdown!
 
-And if you want to get really crazy, even tables:
+- unordered list start with \`-\`, \`+\`, or \`*\`
+- don't for get the space after
++ switching doesn't matter
+* it's still the same list unless you switch to ordered lists
+1. the number only matters on the first one
+1. the rest fall in line
+5. despite what number you use
+1. just use a number followed by a \`.\` and a space
+- this breaks the last list
+ - nested list work like this
+ - can we go further?
+   - I think we can
+     + maybe even further
 
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | ------------- 
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
+> Block Quotes are done like this
+> this is the next line in the block quote
 
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
+**Wait** can we do more like *bold* to emphasize text.
+_italic_ would be nice too.
+**_both_** would be too crazy...
+but not as crazy as puns with markdown: ~~eyed~~
 
-1. And there are numbererd lists too.
-1. Use just 1s if you want! 
-1. But the list goes on...
-- Even if you use dashes or asterisks.
-* And last but not least, let's not forget embedded images:
+You can go to the documentation at [your link text goes here!](https://github.github.com/gfm/), to find all the things you can do with markdown.
 
-![React Logo w/ Text](https://goo.gl/Umyytc)`;
+But I don't like to type, how about images to save myself a thousand keypresses?
+We can do that too like this:
+
+![FCC logo with text: alt text goes here and the source follows](https://jywillia.github.io/react-markdown-previewer/public/fcc_primary_large.svg)`

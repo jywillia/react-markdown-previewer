@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding-bottom: 2em;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,33 +15,77 @@ code {
 }
 
 #appTitle {
+  padding-bottom: 1em;
   text-align: center;
 }
 
-#left-col {
-  border: 5px solid black;
+#left-col {  
   height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 10px 10px 5px rgba(36, 35, 35, 0.692), -10px 10px 5px rgba(36, 35, 35, 0.692);
 }
 
-#right-col {
+#editor-header {
   border: 5px solid black;
-}
-
-textarea {    
-  min-height: 90vh;
+  font-weight: 500;
+  background-color: royalblue;
   width: 100%;
 }
 
-pre {
-  box-sizing: border-box;  
-  font-family: monospace;
+#right-col {  
+  overflow-wrap: break-word;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid black;
   background-color: white;
+  box-shadow: 10px 10px 5px rgba(36, 35, 35, 0.692), -10px 10px 5px rgba(36, 35, 35, 0.692);
+}
+
+#preview-header {
+  border: 5px solid black;
+  font-weight: 500;
+  background-color: royalblue;
+  width: 100%;
+}
+
+#preview {
+  display: inline-block;  
+  width: 100%;  
+  height: 100%;
+  margin-left: 5px;
+  margin-right: 5px;  
+}
+
+#editor {  
+  margin-left: 5px;  
+  margin-right: 5px;
+  min-height: 60vh;  
+  width: 100%;
+  display: inline-block;
+  resize: vertical;  
+  overflow: auto;
+  border: none;
+}
+
+pre {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;      
+  font-family: monospace;
+  background-color: silver;
 }
 
 code {
   color: black;
   box-sizing: border-box;
-  background-color: white;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;    
+  background-color: silver;
 }
 
 blockquote {
@@ -53,6 +98,8 @@ blockquote {
 table {
   table-layout: fixed;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;    
   border-spacing: 2px;
   border: 3px solid darkblue;
   border-collapse: collapse;
