@@ -67,4 +67,4 @@ You can go to the documentation at [your link text goes here!](https://github.gi
 But I don't like to type, how about images to save myself a thousand keypresses?
 We can do that too like this:
 
-![FCC logo with text: alt text goes here and the source follows](https://jywillia.github.io/react-markdown-previewer/fcc_primary_large.png)`
+![FCC logo: alt text goes here and the source follows](https://jywillia.github.io/react-markdown-previewer/fcc_secondary_small.svg)`
