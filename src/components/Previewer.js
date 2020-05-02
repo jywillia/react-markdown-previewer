@@ -30,8 +30,7 @@ class Previewer extends React.Component {
 
     // stateless function to convert input to html
     convert( value ) {
-        return { __html:DOMPurify.sanitize( marked( value, { gfm: true, breaks: true } ) ) };
-        // return { __html:marked( value, { gfm: true, breaks: true } ) };
+        return { __html:DOMPurify.sanitize( marked( value, { gfm: true, breaks: true } ) ) };        
     }
 
     // onClick listener handles when user wants previewer maximized

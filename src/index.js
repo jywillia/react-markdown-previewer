@@ -1,12 +1,23 @@
+// import react dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// import css style sheet
 import './index.css';
+
+// import app wrapper
 import MDPApp from './MDPApp';
+
+// default service worker
 import * as serviceWorker from './serviceWorker';
+
+// import redux dependencies
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+
+// import reducer functions
 import mdpReducer from './redux/reducers/mdpReducer.js';
-import './index.css';
+
 
 // create store to hold app's state
 const store = createStore( mdpReducer );
